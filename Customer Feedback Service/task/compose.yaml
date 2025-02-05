@@ -1,0 +1,10 @@
+services:
+  mongodb:
+    image: mongo:5
+    container_name: feedback-service
+    environment:
+      MONGO_INITDB_DATABASE: feedback_db
+    ports:
+      - "27017:27017"
+    tmpfs:
+      - /data/db
