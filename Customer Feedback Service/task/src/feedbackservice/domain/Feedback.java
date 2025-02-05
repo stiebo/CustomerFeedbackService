@@ -37,11 +37,11 @@ public class Feedback {
         return this;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public Feedback setRating(int rating) {
+    public Feedback setRating(Integer rating) {
         this.rating = rating;
         return this;
     }

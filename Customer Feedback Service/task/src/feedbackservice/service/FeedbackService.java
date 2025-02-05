@@ -7,8 +7,6 @@ import feedbackservice.repository.FeedbackRepository;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class FeedbackService {
@@ -25,10 +23,6 @@ public class FeedbackService {
     public Feedback getFeedback(String id) {
         return feedbackRepository.findById(id)
                 .orElseThrow(() -> new FeedbackNotFoundException("Feedback not found with id: " + id));
-    }
-
-    public Page<Feedback> getAllFeedbacks(Pageable pageable) {
-        return feedbackRepository.findAllByOrderByIdDesc(pageable);
     }
 
     public PaginatedResponseDto getFilteredFeedbacks(Integer rating, String customer,
